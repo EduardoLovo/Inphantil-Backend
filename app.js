@@ -1,16 +1,21 @@
 require("dotenv").config();
+
+
+// Importações
 const express = require("express");
 const mongoose = require("mongoose");
-// Importa cors
 const cors = require("cors");
 
+// Use express
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
+
 // Models
 const User = require("./models/User");
+
 
 // Routes
 const authRouter = require("./auth/auth");
@@ -18,10 +23,12 @@ const loginRouter = require("./routes/login.route");
 const apliqueRouter = require("./routes/aplique.routes");
 const userRouter = require("./routes/user.routes");
 
+
 // Open Route - Public Route
 app.get("/", (req, res) => {
   res.status(200).json({ msg: "Bem vindo a nossa API!" });
 });
+
 
 // Private Route
 app.get("/users/:id", checkToken, async (req, res) => {
@@ -69,6 +76,9 @@ app.use("/users", userRouter);
 const dbUser = process.env.DB_USER;
 const dbPass = process.env.DB_PASS;
 
+
+
+// conexão com o banco de dados
 mongoose
   .set("strictQuery", false)
   .connect(
