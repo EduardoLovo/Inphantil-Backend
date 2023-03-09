@@ -2,7 +2,7 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 };
 
-require("dotenv").config();
+// require("dotenv").config();
 
 
 // Importações
@@ -26,6 +26,7 @@ const authRouter = require("./auth/auth");
 const loginRouter = require("./routes/login.route");
 const apliqueRouter = require("./routes/aplique.routes");
 const userRouter = require("./routes/user.routes");
+const taskRouter = require("./routes/task.routes");
 
 
 // Open Route - Public Route
@@ -75,6 +76,7 @@ app.use("/auth/register", authRouter);
 app.use("/login", loginRouter);
 app.use("/aplique", apliqueRouter);
 app.use("/users", userRouter);
+app.use("/tarefas", taskRouter);
 
 // Credencials
 const dbUser = process.env.DB_USER;
