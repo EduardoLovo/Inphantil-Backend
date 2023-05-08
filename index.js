@@ -27,7 +27,7 @@ const loginRouter = require("./routes/login.route");
 const apliqueRouter = require("./routes/aplique.routes");
 const userRouter = require("./routes/user.routes");
 const taskRouter = require("./routes/task.routes");
-
+const lencolApliqueRouter = require("./routes/lencolApliquue.routes");
 
 // Open Route - Public Route
 app.get("/", (req, res) => {
@@ -77,6 +77,7 @@ app.use("/login", loginRouter);
 app.use("/aplique", apliqueRouter);
 app.use("/users", userRouter);
 app.use("/tarefas", taskRouter);
+app.use("/lencolApliques", lencolApliqueRouter);
 
 // Credencials
 const dbUser = process.env.DB_USER;
@@ -98,4 +99,4 @@ mongoose
   })
   .catch((err) => console.log(err));
 
-//npm start dev
+//npm run dev
