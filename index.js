@@ -89,7 +89,9 @@ const dbPass = process.env.DB_PASS;
 mongoose
   .set("strictQuery", false)
   .connect(
-    `mongodb+srv://${dbUser}:${dbPass}@cluster0.wrwrg0v.mongodb.net/?retryWrites=true&w=majority`
+    // `mongodb+srv://${dbUser}:${dbPass}@cluster0.wrwrg0v.mongodb.net/?retryWrites=true&w=majority`
+    `mongodb+srv://${dbUser}:${dbPass}@cluster0.wrwrg0v.mongodb.net/`
+
   )
 
   .then(() => {
