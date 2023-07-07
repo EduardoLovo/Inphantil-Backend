@@ -4,7 +4,6 @@ if (process.env.NODE_ENV !== 'production') {
 
 // require("dotenv").config();
 
-
 // Importações
 const express = require("express");
 const mongoose = require("mongoose");
@@ -16,10 +15,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-
 // Models
 const User = require("./models/User");
-
 
 // Routes
 const authRouter = require("./auth/auth");
@@ -28,6 +25,7 @@ const apliqueRouter = require("./routes/aplique.routes");
 const userRouter = require("./routes/user.routes");
 const taskRouter = require("./routes/task.routes");
 const lencolApliqueRouter = require("./routes/lencolApliquue.routes");
+const lencolTecidoRouter = require("./routes/lencolTecido.routes");
 
 // Open Route - Public Route
 app.get("/", (req, res) => {
@@ -71,19 +69,18 @@ function checkToken(req, res, next) {
 
 // auth ****
 app.use("/auth/register", authRouter);
-
-//login ***
+// Rota login ***
 app.use("/login", loginRouter);
+// Rotas
 app.use("/aplique", apliqueRouter);
 app.use("/users", userRouter);
 app.use("/tarefas", taskRouter);
 app.use("/lencolApliques", lencolApliqueRouter);
+app.use("/lencolTecidos", lencolTecidoRouter);
 
 // Credencials
 const dbUser = process.env.DB_USER;
 const dbPass = process.env.DB_PASS;
-
-
 
 // conexão com o banco de dados
 mongoose
