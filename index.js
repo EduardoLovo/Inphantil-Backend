@@ -26,12 +26,12 @@ const userRouter = require("./routes/user.routes");
 const taskRouter = require("./routes/task.routes");
 const lencolApliqueRouter = require("./routes/lencolApliquue.routes");
 const lencolTecidoRouter = require("./routes/lencolTecido.routes");
+const materialRouter = require("./routes/material.routes");
 
 // Open Route - Public Route
 app.get("/", (req, res) => {
   res.status(200).json({ msg: "Bem vindo a nossa API!" });
 });
-
 
 // Private Route
 app.get("/users/:id", checkToken, async (req, res) => {
@@ -77,6 +77,7 @@ app.use("/users", userRouter);
 app.use("/tarefas", taskRouter);
 app.use("/lencolApliques", lencolApliqueRouter);
 app.use("/lencolTecidos", lencolTecidoRouter);
+app.use("/material", materialRouter);
 
 // Credencials
 const dbUser = process.env.DB_USER;
@@ -99,5 +100,3 @@ mongoose
   .catch((err) => console.log(err));
 
 //npm run dev
-
-//text
