@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Material = mongoose.model("Material", {
   codigo: String,
   img: String,
-  estoque: Boolean,
+  estoque: String,
 });
 
 module.exports = Material;
