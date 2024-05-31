@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const LencolAplique = mongoose.model("LencolAplique", {
     number: String,
     img: String,
-    quantidade: String,
+    quantidade: Number,
     cor: String,
     tamanho: String
 });

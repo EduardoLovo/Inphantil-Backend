@@ -4,7 +4,6 @@ const LencolTecido = mongoose.model("LencolTecido", {
     img: String,
     quantidade: Number,
     cor: String,
-    tamanho: String,
     estoque: String
 });
 

@@ -16,17 +16,17 @@ app.use(express.json());
 app.use(cors());
 
 // Models
-const User = require("./models/User");
+const User = require("./src/models/User");
 
 // Routes
 const authRouter = require("./auth/auth");
-const loginRouter = require("./routes/login.route");
-const apliqueRouter = require("./routes/aplique.routes");
-const userRouter = require("./routes/user.routes");
-const taskRouter = require("./routes/task.routes");
-const lencolApliqueRouter = require("./routes/lencolApliquue.routes");
-const lencolTecidoRouter = require("./routes/lencolTecido.routes");
-const materialRouter = require("./routes/material.routes");
+const loginRouter = require("./src/routes/login.route");
+const apliqueRouter = require("./src/routes/aplique.routes");
+const userRouter = require("./src/routes/user.routes");
+const taskRouter = require("./src/routes/task.routes");
+const lencolApliqueRouter = require("./src/routes/lencolApliquue.routes");
+const lencolTecidoRouter = require("./src/routes/lencolTecido.routes");
+const materialRouter = require("./src/routes/material.routes");
 
 // Open Route - Public Route
 app.get("/", (req, res) => {
