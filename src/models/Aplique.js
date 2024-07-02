@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Aplique = mongoose.model("Aplique", {
   codigo: String,
-  img: String,
+  imagem: String,
   quantidade: Number,
   estoque: String,
   ordem: Number,
