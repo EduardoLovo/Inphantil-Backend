@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
 
 const Aplique = mongoose.model("Aplique", {
-  number: String,
+  codigo: String,
   img: String,
   quantidade: Number,
   estoque: String,
+  ordem: Number,
 });
 
 module.exports = Aplique;
